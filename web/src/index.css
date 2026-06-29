@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-carvao: #1C1C1C;
+  --color-coral: #D85A30;
+  --color-laranja: #FF7A52;
+  --color-creme: #FAECE7;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #F5F5F5;
+  color: #3A3A3A;
+  -webkit-font-smoothing: antialiased;
+}
