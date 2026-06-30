@@ -1,5 +1,2 @@
-[build]
-buildCommand = "cd api && npm install"
-
 [deploy]
 startCommand = "node api/index.js"

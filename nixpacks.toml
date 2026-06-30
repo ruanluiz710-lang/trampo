@@ -1,0 +1,7 @@
+providers = ["node"]
+
+[phases.build]
+cmds = ["cd api && npm install"]
+
+[start]
+cmd = "node api/index.js"
