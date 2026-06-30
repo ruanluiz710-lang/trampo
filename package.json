@@ -1,0 +1,11 @@
+{
+  "name": "trampo",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd api && npm install",
+    "start": "node api/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
