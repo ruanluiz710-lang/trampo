@@ -19,7 +19,7 @@ export default function Professionals() {
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category_id') || '')
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/categories`))
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/categories`)
       .then(r => r.json())
       .then(setCategories)
   }, [])

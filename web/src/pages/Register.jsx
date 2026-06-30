@@ -42,7 +42,7 @@ export default function Register() {
   async function handlePay() {
     setLoading(true); setError('')
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/payment/create-preference`), {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/payment/create-preference`, {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
