@@ -12,7 +12,7 @@ export default function Register() {
   const [form, setForm] = useState({ name: '', phone: '', city: '', state: '', bio: '', category_id: '', description: '', price_range: '' })
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/categories`)).then(r => r.json()).then(setCategories)
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/categories`).then(r => r.json()).then(setCategories)
   }, [])
 
   const set = (field, value) => setForm(f => ({ ...f, [field]: value }))

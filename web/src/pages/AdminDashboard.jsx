@@ -100,8 +100,8 @@ export default function AdminDashboard() {
     setLoading(true)
     try {
       const [pendingRes, approvedRes] = await Promise.all([
-        fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/admin/pending`)).then(r => r.json()),
-        fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/professionals`)).then(r => r.json()),
+        fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/admin/pending`).then(r => r.json()),
+        fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/professionals`).then(r => r.json()),
       ])
       const approvedList = Array.isArray(approvedRes) ? approvedRes : []
       setPending(Array.isArray(pendingRes) ? pendingRes : [])
