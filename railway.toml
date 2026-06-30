@@ -1,5 +1,5 @@
 [build]
-rootDirectory = "api"
+buildCommand = "cd api && npm install"
 
 [deploy]
-startCommand = "node index.js"
+startCommand = "node api/index.js"
