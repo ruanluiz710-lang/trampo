@@ -2,7 +2,7 @@ const { MercadoPagoConfig, Preference, Payment } = require('mercadopago')
 const supabase = require('../config/supabase')
 
 const client = new MercadoPagoConfig({
-  accessToken: process.env.MP_ACCESS_TOKEN,
+  accessToken: process.env.MP_ACCESS_TOKEN || 'placeholder',
 })
 
 async function createPreference(req, res) {
