@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const f = "'Plus Jakarta Sans', sans-serif"
@@ -100,8 +100,8 @@ export default function AdminDashboard() {
     setLoading(true)
     try {
       const [pendingRes, approvedRes] = await Promise.all([
-        fetch('http://localhost:3000/admin/pending').then(r => r.json()),
-        fetch('http://localhost:3000/professionals').then(r => r.json()),
+        fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/admin/pending`)).then(r => r.json()),
+        fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/professionals`)).then(r => r.json()),
       ])
       const approvedList = Array.isArray(approvedRes) ? approvedRes : []
       setPending(Array.isArray(pendingRes) ? pendingRes : [])
@@ -109,7 +109,7 @@ export default function AdminDashboard() {
 
       const allReviews = await Promise.all(
         approvedList.map(p =>
-          fetch(`http://localhost:3000/reviews/${p.id}`)
+          fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/reviews/${p.id}`)
             .then(r => r.json())
             .then(revs => Array.isArray(revs) ? revs.map(r => ({ ...r, professionalName: p.name })) : [])
             .catch(() => [])
@@ -125,7 +125,7 @@ export default function AdminDashboard() {
 
   async function handleAction(id, action) {
     setActionLoading(id + action)
-    await fetch(`http://localhost:3000/admin/${id}/${action}`, { method: 'PATCH' })
+    await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/admin/${id}/${action}`, { method: 'PATCH' })
     await fetchData()
     setActionLoading(null)
   }
@@ -133,7 +133,7 @@ export default function AdminDashboard() {
   async function deleteReview(id) {
     if (!window.confirm('Excluir esta avaliação?')) return
     setDeleteLoading(id)
-    await fetch(`http://localhost:3000/reviews/${id}`, { method: 'DELETE' })
+    await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/reviews/${id}`, { method: 'DELETE' })
     await fetchData()
     setDeleteLoading(null)
   }

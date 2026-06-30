@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 
 const ESTADOS = ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO']
 const f = "'Plus Jakarta Sans', sans-serif"
@@ -12,7 +12,7 @@ export default function Register() {
   const [form, setForm] = useState({ name: '', phone: '', city: '', state: '', bio: '', category_id: '', description: '', price_range: '' })
 
   useEffect(() => {
-    fetch('http://localhost:3000/categories').then(r => r.json()).then(setCategories)
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/categories`)).then(r => r.json()).then(setCategories)
   }, [])
 
   const set = (field, value) => setForm(f => ({ ...f, [field]: value }))
@@ -42,7 +42,7 @@ export default function Register() {
   async function handlePay() {
     setLoading(true); setError('')
     try {
-      const res = await fetch('http://localhost:3000/payment/create-preference', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/payment/create-preference`), {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })

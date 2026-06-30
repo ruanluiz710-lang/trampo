@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
@@ -22,7 +22,7 @@ export default function Profile() {
   const [reviewError, setReviewError] = useState('')
 
   useEffect(() => {
-    fetch(`http://localhost:3000/professionals/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/professionals/${id}`)
       .then(r => r.json())
       .then(data => { setProfessional(data); setLoading(false) })
       .catch(() => setLoading(false))
@@ -34,7 +34,7 @@ export default function Profile() {
     setReviewLoading(true)
     setReviewError('')
     try {
-      const res = await fetch(`http://localhost:3000/reviews/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/reviews/${id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(reviewForm),
@@ -45,7 +45,7 @@ export default function Profile() {
         return
       }
       setReviewSuccess(true)
-      const updated = await fetch(`http://localhost:3000/professionals/${id}`)
+      const updated = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/professionals/${id}`)
       setProfessional(await updated.json())
     } finally {
       setReviewLoading(false)

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
@@ -23,7 +23,7 @@ export default function Home() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch('http://localhost:3000/categories').then(r => r.json()).then(setCategories).catch(() => {})
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/categories`)).then(r => r.json()).then(setCategories).catch(() => {})
   }, [])
 
   function handleSearch(e) {

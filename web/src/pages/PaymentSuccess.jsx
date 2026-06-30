@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
@@ -16,7 +16,7 @@ export default function PaymentSuccess() {
       return
     }
 
-    fetch(`http://localhost:3000/payment/confirm?payment_id=${payment_id}&status=${paymentStatus}&external_reference=${encodeURIComponent(external_reference)}`)
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/payment/confirm?payment_id=${payment_id}&status=${paymentStatus}&external_reference=${encodeURIComponent(external_reference)}`)
       .then(r => r.json())
       .then(data => setStatus(data.success ? 'success' : 'error'))
       .catch(() => setStatus('error'))

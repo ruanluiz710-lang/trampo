@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
@@ -19,7 +19,7 @@ export default function Professionals() {
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category_id') || '')
 
   useEffect(() => {
-    fetch('http://localhost:3000/categories')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/categories`))
       .then(r => r.json())
       .then(setCategories)
   }, [])
@@ -30,7 +30,7 @@ export default function Professionals() {
     if (city) params.set('city', city)
     if (selectedCategory) params.set('category_id', selectedCategory)
 
-    fetch(`http://localhost:3000/professionals?${params}`)
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/professionals?${params}`)
       .then(r => r.json())
       .then(data => { setProfessionals(Array.isArray(data) ? data : []); setLoading(false) })
       .catch(() => setLoading(false))
