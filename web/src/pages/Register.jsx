@@ -82,9 +82,10 @@ export default function Register() {
             </div>
             <span style={{ color: '#fff', fontWeight: '900', fontSize: '18px', letterSpacing: '-0.02em' }}>TRAMPO</span>
           </div>
-          {!isMobile && (
-            <a href="/profissionais" style={{ color: 'rgba(255,255,255,0.55)', fontSize: '14px', fontWeight: '500', textDecoration: 'none' }}>Encontrar profissional</a>
-          )}
+          <a href="/profissionais" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'rgba(255,255,255,0.7)', fontSize: '14px', fontWeight: '600', textDecoration: 'none', backgroundColor: 'rgba(255,255,255,0.08)', padding: '8px 14px', borderRadius: '999px', border: '1px solid rgba(255,255,255,0.12)' }}>
+            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_back</span>
+            {isMobile ? 'Voltar' : 'Encontrar profissional'}
+          </a>
         </div>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', paddingBottom: isMobile ? '40px' : '56px', paddingTop: isMobile ? '32px' : '48px' }}>
           <h1 style={{ color: '#fff', fontWeight: '900', fontSize: isMobile ? '1.8rem' : 'clamp(2rem, 4vw, 3rem)', marginBottom: '10px', letterSpacing: '-0.02em' }}>Criar meu perfil</h1>
