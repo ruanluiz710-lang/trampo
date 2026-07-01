@@ -70,32 +70,34 @@ export default function Home() {
 
           <form onSubmit={handleSearch} style={{
             maxWidth: '820px', margin: '0 auto',
-            backgroundColor: '#fff', borderRadius: isMobile ? '16px' : '20px',
+            backgroundColor: '#fff', borderRadius: isMobile ? '14px' : '20px',
             padding: isMobile ? '6px' : '8px', boxShadow: '0 25px 50px rgba(0,0,0,0.4)',
-            display: 'flex', flexDirection: isMobile ? 'column' : 'row',
-            alignItems: 'stretch',
+            display: 'flex', flexDirection: 'row',
+            alignItems: 'center',
           }}>
-            <div style={{ flex: '1 1 220px', display: 'flex', alignItems: 'center', padding: isMobile ? '8px 14px' : '12px 20px', borderBottom: isMobile ? '1px solid #f0f0f0' : 'none', borderRight: isMobile ? 'none' : '1px solid #f0f0f0' }}>
-              <span className="material-symbols-outlined" style={{ color: '#9ca3af', marginRight: '10px', fontSize: isMobile ? '18px' : '22px' }}>search</span>
+            {!isMobile && (
+              <div style={{ flex: '1 1 220px', display: 'flex', alignItems: 'center', padding: '12px 20px', borderRight: '1px solid #f0f0f0' }}>
+                <span className="material-symbols-outlined" style={{ color: '#9ca3af', marginRight: '10px', fontSize: '22px' }}>search</span>
+                <input
+                  type="text" placeholder="Qual serviço você precisa?"
+                  style={{ flex: 1, border: 'none', outline: 'none', fontSize: '15px', color: '#1A1A1A', fontFamily: f, backgroundColor: 'transparent' }}
+                />
+              </div>
+            )}
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', padding: isMobile ? '6px 12px' : '12px 20px' }}>
+              <span className="material-symbols-outlined" style={{ color: '#9ca3af', marginRight: '8px', fontSize: isMobile ? '18px' : '22px' }}>location_on</span>
               <input
-                type="text" placeholder="Qual serviço você precisa?"
-                style={{ flex: 1, border: 'none', outline: 'none', fontSize: '14px', color: '#1A1A1A', fontFamily: f, backgroundColor: 'transparent' }}
-              />
-            </div>
-            <div style={{ flex: '1 1 160px', display: 'flex', alignItems: 'center', padding: isMobile ? '8px 14px' : '12px 20px', borderBottom: isMobile ? '1px solid #f0f0f0' : 'none' }}>
-              <span className="material-symbols-outlined" style={{ color: '#9ca3af', marginRight: '10px', fontSize: isMobile ? '18px' : '22px' }}>location_on</span>
-              <input
-                type="text" placeholder="Sua cidade" value={city}
+                type="text" placeholder={isMobile ? 'Buscar por cidade...' : 'Sua cidade'} value={city}
                 onChange={e => setCity(e.target.value)}
                 style={{ flex: 1, border: 'none', outline: 'none', fontSize: '14px', color: '#1A1A1A', fontFamily: f, backgroundColor: 'transparent' }}
               />
             </div>
             <button type="submit" style={{
-              backgroundColor: '#D95D39', color: '#fff', fontWeight: '700', fontSize: '14px',
+              backgroundColor: '#D95D39', color: '#fff', fontWeight: '700', fontSize: isMobile ? '13px' : '15px',
               padding: isMobile ? '10px 16px' : '16px 32px',
-              borderRadius: '12px', border: 'none', cursor: 'pointer', fontFamily: f,
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-              margin: isMobile ? '4px' : '4px',
+              borderRadius: isMobile ? '10px' : '14px', border: 'none', cursor: 'pointer', fontFamily: f,
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+              margin: '2px', whiteSpace: 'nowrap', flexShrink: 0,
             }}>
               Buscar
               <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>arrow_forward</span>
