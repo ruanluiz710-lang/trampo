@@ -95,7 +95,7 @@ export default function Home() {
             Escolha uma categoria para ver os profissionais disponíveis
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', maxWidth: '800px', margin: '0 auto' }}>
-            {categories.slice(0, 3).map(cat => {
+            {['Eletricista', 'Pedreiro', 'Ar-condicionado'].map(name => categories.find(c => c.name === name)).filter(Boolean).map(cat => {
               const cfg = CATEGORY_CONFIG[cat.name] || { icon: 'build', bg: '#f3f4f6', color: '#6b7280' }
               return (
                 <button key={cat.id} onClick={() => goToCategory(cat.id)}
