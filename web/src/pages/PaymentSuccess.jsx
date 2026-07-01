@@ -37,14 +37,29 @@ export default function PaymentSuccess() {
 
         {status === 'success' && (
           <>
-            <div style={{ width: '96px', height: '96px', backgroundColor: '#FAECE7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 28px', fontSize: '44px' }}>✅</div>
-            <h2 style={{ fontWeight: '900', fontSize: '2rem', color: '#1C1C1C', marginBottom: '14px' }}>Pagamento confirmado!</h2>
-            <p style={{ color: '#6b7280', fontSize: '16px', lineHeight: '1.7', marginBottom: '12px' }}>
-              Seu cadastro foi enviado e está em análise.
+            <div style={{ width: '96px', height: '96px', backgroundColor: '#dcfce7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 32px' }}>
+              <span style={{ fontSize: '48px', lineHeight: 1 }}>🎉</span>
+            </div>
+            <h2 style={{ fontWeight: '900', fontSize: '2rem', color: '#1C1C1C', marginBottom: '16px', letterSpacing: '-0.02em' }}>
+              Tudo certo, bem-vindo ao Trampo!
+            </h2>
+            <p style={{ color: '#6b7280', fontSize: '16px', lineHeight: '1.8', marginBottom: '28px' }}>
+              Seu cadastro foi recebido com sucesso e já está sendo analisado pela nossa equipe.
             </p>
-            <p style={{ color: '#9ca3af', fontSize: '14px', marginBottom: '36px' }}>
-              Após a aprovação, entre com seu <strong style={{ color: '#1C1C1C' }}>nome</strong> e <strong style={{ color: '#1C1C1C' }}>telefone</strong> para acessar sua conta.
-            </p>
+            <div style={{ backgroundColor: '#fff', borderRadius: '16px', padding: '24px', marginBottom: '36px', border: '1px solid #f0f0f0', boxShadow: '0 2px 12px rgba(0,0,0,0.05)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                {[
+                  { icon: '🔍', text: 'Nossa equipe vai revisar suas informações' },
+                  { icon: '✅', text: 'Após aprovado, seu perfil aparece na lista de profissionais' },
+                  { icon: '📲', text: 'Os clientes entram em contato direto pelo seu WhatsApp' },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '14px', textAlign: 'left' }}>
+                    <span style={{ fontSize: '22px', flexShrink: 0 }}>{item.icon}</span>
+                    <span style={{ color: '#374151', fontSize: '14px', fontWeight: '500', lineHeight: '1.5' }}>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
             <Link to="/" style={{ display: 'inline-block', backgroundColor: '#D85A30', color: '#fff', fontWeight: '700', fontSize: '16px', padding: '16px 36px', borderRadius: '12px', textDecoration: 'none' }}>
               Voltar para o início
             </Link>
