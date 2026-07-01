@@ -24,7 +24,7 @@ function AdminLogin({ onLogin }) {
     <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#1A1A1A', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: f, padding: '24px', boxSizing: 'border-box' }}>
       <div style={{ width: '100%', maxWidth: '400px' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <img src="/logo.png" alt="Trampo" style={{ width: '52px', height: '52px', borderRadius: '14px', objectFit: 'cover', margin: '0 auto 16px', display: 'block' }} />
+          <img src="/logotrampo.png" alt="Trampo" style={{ width: '52px', height: '52px', borderRadius: '14px', objectFit: 'cover', margin: '0 auto 16px', display: 'block' }} />
           <h1 style={{ color: '#fff', fontWeight: '900', fontSize: '24px', marginBottom: '6px', letterSpacing: '-0.02em' }}>Painel Admin</h1>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '14px' }}>Acesso restrito</p>
         </div>
@@ -148,7 +148,7 @@ export default function AdminDashboard() {
       <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: '#1A1A1A', borderBottom: '1px solid rgba(255,255,255,0.05)', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: isMobile ? '0 16px' : '0 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <img src="/logo.png" alt="Trampo" style={{ width: '32px', height: '32px', borderRadius: '8px', objectFit: 'cover' }} />
+            <img src="/logotrampo.png" alt="Trampo" style={{ width: '32px', height: '32px', borderRadius: '8px', objectFit: 'cover' }} />
             <span style={{ color: '#fff', fontWeight: '800', fontSize: '18px', letterSpacing: '-0.02em' }}>TRAMPO</span>
           </div>
           {!isMobile && (

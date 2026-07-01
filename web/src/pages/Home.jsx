@@ -195,7 +195,7 @@ export default function Home() {
       <footer style={{ backgroundColor: '#1A1A1A', padding: isMobile ? '48px 16px' : '64px 32px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-            <img src="/logo.png" alt="Trampo" style={{ width: '32px', height: '32px', borderRadius: '6px', objectFit: 'cover' }} />
+            <img src="/logotrampo.png" alt="Trampo" style={{ width: '32px', height: '32px', borderRadius: '6px', objectFit: 'cover' }} />
             <span style={{ color: '#fff', fontWeight: '900', fontSize: '20px', letterSpacing: '-0.02em' }}>TRAMPO</span>
           </div>
           <p style={{ color: '#6b7280', fontSize: '13px', fontWeight: '500', marginBottom: '40px' }}>Para quem faz acontecer</p>

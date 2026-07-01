@@ -18,7 +18,7 @@ export default function Navbar() {
         height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-          <img src="/logo.png" alt="Trampo" style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover' }} />
+          <img src="/logotrampo.png" alt="Trampo" style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover' }} />
           <span style={{ color: '#ffffff', fontWeight: '900', fontSize: isMobile ? '18px' : '22px', letterSpacing: '-0.03em' }}>TRAMPO</span>
         </Link>
 
