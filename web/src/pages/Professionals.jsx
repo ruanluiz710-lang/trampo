@@ -54,7 +54,7 @@ export default function Professionals() {
       <Navbar />
 
       {/* Header com busca */}
-      <div style={{ backgroundColor: '#1C1C1C', padding: '56px 32px 72px', width: '100%' }}>
+      <div style={{ backgroundColor: '#1C1C1C', padding: '100px 32px 72px', width: '100%' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h1 style={{ color: '#fff', fontWeight: '900', fontSize: '2.4rem', marginBottom: '8px' }}>
             Encontre um profissional
