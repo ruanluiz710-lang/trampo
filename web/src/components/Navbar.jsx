@@ -18,9 +18,7 @@ export default function Navbar() {
         height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-          <div style={{ width: '36px', height: '36px', backgroundColor: '#D95D39', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ color: '#fff', fontWeight: '900', fontSize: '18px', lineHeight: 1 }}>T</span>
-          </div>
+          <img src="/logo.png" alt="Trampo" style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover' }} />
           <span style={{ color: '#ffffff', fontWeight: '900', fontSize: isMobile ? '18px' : '22px', letterSpacing: '-0.03em' }}>TRAMPO</span>
         </Link>
 

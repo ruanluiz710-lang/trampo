@@ -77,9 +77,7 @@ export default function Register() {
       <header style={{ backgroundColor: '#1A1A1A', padding: isMobile ? '0 16px' : '0 32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{ width: '36px', height: '36px', backgroundColor: PRIMARY, borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ color: '#fff', fontWeight: '900', fontSize: '17px' }}>T</span>
-            </div>
+            <img src="/logo.png" alt="Trampo" style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover' }} />
             <span style={{ color: '#fff', fontWeight: '900', fontSize: '18px', letterSpacing: '-0.02em' }}>TRAMPO</span>
           </div>
           <a href="/profissionais" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'rgba(255,255,255,0.7)', fontSize: '14px', fontWeight: '600', textDecoration: 'none', backgroundColor: 'rgba(255,255,255,0.08)', padding: '8px 14px', borderRadius: '999px', border: '1px solid rgba(255,255,255,0.12)' }}>
