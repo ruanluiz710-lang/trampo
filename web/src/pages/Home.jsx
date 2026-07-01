@@ -94,8 +94,8 @@ export default function Home() {
           <p style={{ color: '#6b7280', fontSize: '16px', marginBottom: '56px', fontWeight: '500' }}>
             Escolha uma categoria para ver os profissionais disponíveis
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(175px, 1fr))', gap: '16px' }}>
-            {categories.map(cat => {
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', maxWidth: '800px', margin: '0 auto' }}>
+            {categories.slice(0, 3).map(cat => {
               const cfg = CATEGORY_CONFIG[cat.name] || { icon: 'build', bg: '#f3f4f6', color: '#6b7280' }
               return (
                 <button key={cat.id} onClick={() => goToCategory(cat.id)}
@@ -110,6 +110,16 @@ export default function Home() {
                 </button>
               )
             })}
+            <button onClick={() => navigate('/profissionais')}
+              style={{ backgroundColor: '#1A1A1A', border: '1px solid #1A1A1A', borderRadius: '24px', padding: '32px 20px', cursor: 'pointer', fontFamily: f, display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.04)', transition: 'all 0.2s' }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)'; e.currentTarget.style.transform = 'translateY(0)' }}
+            >
+              <div style={{ width: '64px', height: '64px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                <span className="material-symbols-outlined" style={{ fontSize: '30px', color: '#fff' }}>grid_view</span>
+              </div>
+              <span style={{ fontWeight: '700', fontSize: '14px', color: '#fff' }}>Outros</span>
+            </button>
           </div>
         </div>
       </section>
